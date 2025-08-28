@@ -1,0 +1,58 @@
+{
+  "name": "daisy",
+  "displayName": "Daisy",
+  "description": "Syntax highlighting and runner for Daisy setup files",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "daisy.run",
+        "title": "Run Daisy"
+      }
+    ],
+    "configuration":[
+      {
+        "title": "Daisy",
+        "properties": {
+          "Daisy.home": {
+            "type": "string",
+            "default": "dummy/dir",
+            "description": "Full path to Daisy installation directory containing lib/ and sample/"
+          },
+          "Daisy.executable": {
+            "type": "string",
+            "default": "dummy/path",
+            "description": "Full path to Daisy executable"
+          }
+        }
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.103.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "eslint": "^9.25.1",
+    "typescript": "^5.8.3",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
