@@ -3,6 +3,15 @@
   "displayName": "Daisy",
   "description": "Syntax highlighting and runner for Daisy setup files",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daisy-model/daisy-vscode"
+  },
+  "author": {
+    "name": "Silas Nyboe Ørting",
+    "email": "silas.orting@pm.me"
+  },
+  "license":"GPL-3.0-only",
   "engines": {
     "vscode": "^1.103.0"
   },
