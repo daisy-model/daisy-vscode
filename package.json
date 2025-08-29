@@ -17,8 +17,8 @@
         "command": "daisy.run",
         "title": "Run Daisy",
         "icon": {
-          "dark": "images/icon.svg",
-          "light": "images/icon.svg"
+          "dark": "images/icon.png",
+          "light": "images/icon.png"
         }
       }
     ],

@@ -68,28 +68,4 @@ export async function getDaisyConfig() : Promise<{home:string, executable: strin
     }
   }
   return config;
-  /*
-
-	if (!directoryExists(config["home"])) {
-		const folderUri = await promptForDirectory("Select Daisy home folder");
-		if (folderUri) {
-			config["home"] = folderUri.fsPath;
-			workspaceConfig.update("home", config["home"], vscode.ConfigurationTarget.Workspace);
-		} else {
-			vscode.window.showErrorMessage("Missing Daisy home");
-			return undefined;
-		}
-	}
-	if (!fileExists(config["executable"])) {
-		const fileUri = await promptForFile("Select Daisy executable");
-		if (fileUri) {
-			config["executable"] = fileUri.fsPath;
-			workspaceConfig.update("executable", config["executable"], vscode.ConfigurationTarget.Workspace);
-		} else {
-			vscode.window.showErrorMessage("Missing Daisy executable");
-			return undefined;		
-		}
-	}
-	return config;
-  */
 }
