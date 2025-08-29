@@ -3,6 +3,7 @@
   "publisher": "daisy-model",
   "displayName": "Daisy",
   "description": "Syntax highlighting and runner for Daisy setup files",
+  "icon": "images/icon-color-128.png",
   "version": "0.0.1",
   "repository": {
     "type": "git",
