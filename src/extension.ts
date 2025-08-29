@@ -10,7 +10,7 @@ import { runCommandWithEnv } from './run';
 async function daisyRun() {
 	const config = await getDaisyConfig();
 	if (config) {
-		//console.log("Daisy home: " + config["home"]);
+		console.log("Daisy home: " + config["home"]);
 		console.log("Daisy executable: " + config["executable"]);
 		const currentFile = getCurrentFilePath();
 		if (currentFile) {

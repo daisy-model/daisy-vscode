@@ -1,0 +1,120 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Daisy",
+	"patterns": [
+		{
+			"include": "#entity"
+		},
+		{
+			"include": "#meta"
+		},		
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#constant"
+		},
+		{
+			"include": "#support"
+		},
+		{
+			"include": "#variable"
+		},
+		{
+			"include": "#string"
+		},
+		{
+			"include": "#comment"
+		}
+	],
+	"repository": {
+		"meta": {
+			"patterns": [
+				{
+					"name": "meta.function.daisy",
+					"match": "(\\b(?i:(def\\w+))\\b)(\\s+)((\\w|\\-|\\!|\\?)*)"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.daisy",
+					"match": "\\b(?i:case|do|let|loop|if|else|when)\\b"
+				},
+				{
+					"name": "keyword.operator.daisy",
+					"match": "\\b(?i:eq|neq|and|or)\\b"
+				},
+				{
+					"name": "keyword.other.daisy",
+					"match": "\\((ui|input|directory|run|path|allow_old_units|install_directory|description)"
+				}
+			]
+		},
+		"constant": {
+			"patterns": [
+				{
+					"name": "constant.character.daisy",
+					"match": "(#|\\?)(\\w|[\\\\+-=<>'\"&#])+"
+				},
+				{
+					"name": "constant.language.daisy",
+					"match": "\\b(?i:null|nil)\\b"
+				},
+				{
+					"name": "constant.numeric.daisy",
+					"match": "\\b((0(x|X)[0-9a-fA-F]*)|(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))((e|E)(\\+|-)?[0-9]+)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b"
+				},
+				{
+					"name": "constant.character.escape.daisy",
+					"begin": "\"",
+					"end": "\"",
+					"match": "\\\\."
+				}
+			]
+		},
+		"support": {
+			"patterns": [
+				{
+					"name": "support.function.daisy",
+					"match": "(?<![-\\w])(?i:cons|car|cdr|cond|lambda|format|setq|setf|quote|eval|append|list|listp|memberp|t|load|progn)(?![-\\w])"
+				}
+			]
+		},
+		"variable": {
+			"patterns": [
+				{
+					"name": "variable.other.global.daisy",
+					"match": "(\\*)(\\S*)(\\*)"
+				}
+			]
+		},
+		"string": {
+			"patterns": [
+				{
+					"name": "string.quoted.double.daisy",
+					"match": "\".*\""
+				}
+			]
+		},
+		"entity": {
+			"patterns": [
+				{
+					"name": "entity.name.function.daisy",
+					"match": "(\\b(?i:(def\\w+))\\b)"
+				},
+				{
+					"name": "entity.name.tag.daisy",
+					"match": "\\[[^\\[\\]]*]"
+				}
+			]
+		},
+		"comment": {
+			"begin": ";",
+			"name": "comment.line.semicolon.daisy",
+			"end": "\\n"
+		}
+	},
+	"scopeName": "source.daisy"
+}

@@ -22,6 +22,41 @@
         }
       }
     ],
+    "keybindings": [
+      {
+        "command": "daisy.run",
+        "key": "F5",
+        "when": "editorLangId == daisy && editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/title/run": [
+        {
+          "command": "daisy.run",
+          "group": "navigation",
+          "when": "editorLangId == daisy"
+        }
+      ]
+    },
+    "languages": [{
+      "id": "daisy",
+      "aliases": ["Daisy", "daisy"],
+      "extensions": [".dai"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "daisy",
+      "scopeName": "source.daisy",
+      "path": "./syntaxes/daisy.tmLanguage.json"
+    }],
+    "semanticTokenScopes": [
+      {
+        "scopes": {
+          "function": ["meta.function.daisy"],
+          "variable": ["variable.other.global.daisy"]
+        }
+      }
+    ],
     "configuration":[
       {
         "title": "Daisy",

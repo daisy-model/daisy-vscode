@@ -1,0 +1,33 @@
+{
+    "comments": {
+        // symbol used for single line comment. Remove this entry if your language does not support line comments
+        "lineComment": ";"
+    },
+    // symbols used as brackets
+    "brackets": [
+        ["[", "]"],
+        ["(", ")"]
+    ],
+    // symbols that are auto closed when typing
+    "autoClosingPairs": [
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"]
+    ],
+    // symbols that can be used to surround a selection
+    "surroundingPairs": [
+        ["[", "]"],
+        ["(", ")"],
+        ["\"", "\""],
+        ["'", "'"]
+    ],
+    //"indentationRules": {
+    // This does not work. It seems like indentation must be bassed on regexes
+    // and only one level per line. And a line cannnot match noth increase and decrease.
+    // We can maybe do clever regex things depending on the style used here, but what we
+    // really want is something based on the parsed syntax tree
+    //    "increaseIndentPattern": "\\(",
+    //    "decreaseIndentPattern": ".*\\)"
+    //}
+}
