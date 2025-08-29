@@ -1,5 +1,6 @@
 {
   "name": "daisy",
+  "publisher": "daisy-model",
   "displayName": "Daisy",
   "description": "Syntax highlighting and runner for Daisy setup files",
   "version": "0.0.1",
