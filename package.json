@@ -15,7 +15,11 @@
     "commands": [
       {
         "command": "daisy.run",
-        "title": "Run Daisy"
+        "title": "Run Daisy",
+        "icon": {
+          "dark": "images/icon.svg",
+          "light": "images/icon.svg"
+        }
       }
     ],
     "configuration":[
@@ -24,13 +28,13 @@
         "properties": {
           "Daisy.home": {
             "type": "string",
-            "default": "dummy/dir",
+            "default": "",
             "description": "Full path to Daisy installation directory containing lib/ and sample/"
           },
           "Daisy.executable": {
-            "type": "string",
-            "default": "dummy/path",
-            "description": "Full path to Daisy executable"
+            "type": "array",
+            "default": [],
+            "description": "Name(s) and full path(s) to Daisy executable(s) given as an array of \"name\", \"path\" pairs. For example,\n[{\n\"name\": \"daisy-v7.1.0\",\n\"path\": \"/opt/Daisy-v7.1.0/bin/daisy\"\n}]"
           }
         }
       }
