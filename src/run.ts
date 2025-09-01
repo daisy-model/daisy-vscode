@@ -62,7 +62,7 @@ function buildCommandWithEnv(
 
   const escapedParams = params.map(escape).join(' ');
   const escapedCommand = escape(command);
-  return `${envPrefix}${command} ${escapedParams}`;
+  return `${envPrefix}${escapedCommand} ${escapedParams}`;
 }
 
 /**
