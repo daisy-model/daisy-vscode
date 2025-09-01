@@ -1,4 +1,5 @@
 import * as vscode from 'vscode';
+import { directoryExists } from './util';
 
 function getOrCreateTerminal(name: string): vscode.Terminal {
   const existing = vscode.window.terminals.find(t => t.name === name);
@@ -18,6 +19,18 @@ function escapePowerShellArg(arg: string): string {
 
 function escapeCmdArg(arg: string): string {
   return `"${arg.replace(/(["^])/g, '^$1')}"`;
+}
+
+function escapeArg(arg: string): string {
+  const shellPath = vscode.env.shell;
+  const shell = shellPath.toLowerCase();
+  let escape = escapeBashArg; // Default to Bash
+  if (shell.includes('powershell')) {
+    escape = escapePowerShellArg;
+  } else if (shell.includes('cmd.exe')) {
+    escape = escapeCmdArg;
+  }
+  return escape(arg);
 }
 
 /**
@@ -56,6 +69,7 @@ function buildCommandWithEnv(
  */
 export function runCommandWithEnv(
   command: string,
+  workingDirectory: string,
   params: string[],
   envVarName: string,
   envVarValue: string,
@@ -66,5 +80,8 @@ export function runCommandWithEnv(
 
   const terminal = getOrCreateTerminal(terminalName);
   terminal.show();
+  if (directoryExists(workingDirectory)) {
+    terminal.sendText(`cd ${escapeArg(workingDirectory)}`); // Change directory if valid
+  }
   terminal.sendText(fullCommand);
 }

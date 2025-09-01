@@ -4,8 +4,7 @@ import * as vscode from 'vscode';
 import { getCurrentFilePath } from './util';
 import { getDaisyConfig } from './config';
 import { runCommandWithEnv } from './run';
-
-
+import * as path from 'path';
 
 async function daisyRun() {
 	const config = await getDaisyConfig();
@@ -14,7 +13,8 @@ async function daisyRun() {
 		console.log("Daisy executable: " + config["executable"]);
 		const currentFile = getCurrentFilePath();
 		if (currentFile) {
-			runCommandWithEnv(config["executable"], [currentFile], "DAISYHOME", config["home"]);
+			const fileDir = path.dirname(currentFile);
+			runCommandWithEnv(config["executable"], fileDir, [currentFile], "DAISYHOME", config["home"]);
 		} else {
 			vscode.window.showErrorMessage("Unable to get path to current file");
 		}
