@@ -13,7 +13,7 @@ export async function getDaisyConfig() : Promise<{home:string, executable: strin
 		const folderUri = await user.promptForDirectory("Select Daisy home folder");
 		if (folderUri) {
 			config["home"] = folderUri.fsPath;
-			workspaceConfig.update("home", config["home"], vscode.ConfigurationTarget.Workspace);
+			workspaceConfig.update("home", config["home"], vscode.ConfigurationTarget.Global);
 		} else {
 			vscode.window.showErrorMessage("Missing Daisy home");
 			return undefined;
@@ -30,7 +30,7 @@ export async function getDaisyConfig() : Promise<{home:string, executable: strin
 			workspaceConfig.update(
         "executable",
         [{"name": "default", "path": config["executable"]}],
-        vscode.ConfigurationTarget.Workspace
+        vscode.ConfigurationTarget.Global
       );
     } else {
       // No path selected by user, so we give up
