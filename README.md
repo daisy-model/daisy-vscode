@@ -18,6 +18,9 @@ This extension contributes the following settings:
 * `Daisy.home`: Full path to Daisy home directory containing lib/ and sample/ directories.
 * `Daisy.executable`: Name(s) and full path(s) to Daisy executable(s) given as an array of "name", "path" pairs.
 
+![Change Daisy settings](images/settings.gif)
+
+
 ### Example `settings.json`
 ```{json}
 {
