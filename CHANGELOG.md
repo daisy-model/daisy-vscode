@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.0.9] - 2025-10-08
+
+### Fixed
+- Syntax highlighting now parses multiple quoted strings on one line as multiple strings instead of as a single string.
+
 ## [0.0.8] - 2025-09-09
 
 ### Added
@@ -15,7 +20,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Save Daisy home/executable to users settings.json so users don't have to select these settings on every run
 
-### Changed 
+### Changed
 - Settings documentation
 
 ### Removed

@@ -94,7 +94,7 @@
 			"patterns": [
 				{
 					"name": "string.quoted.double.daisy",
-					"match": "\".*\""
+					"match": "\"[^\"]*\""
 				}
 			]
 		},
